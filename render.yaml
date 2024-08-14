@@ -1,0 +1,25 @@
+databases:
+  - name: graphdb
+    databaseName: graphdb
+    user: graphdb
+
+services:
+  - type: web
+    name: graphdb
+    plan: starter
+    region: oregon
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn app.wsgi:application"
+    autoDeploy: false
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: DATABASE_URL
+        fromDatabase:
+          name: graphdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4

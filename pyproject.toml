@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "GraphDBService-Backend"
+version = "0.1.0"
+description = "A GraphDB management service backend."
+authors = ["PythonDecorator <okpeamos.ao@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+whitenoise = {extras = ["brotli"], version = "^6.6.0"}
+django = ">=3.2.4,<3.3"
+djangorestframework = ">=3.15.0,<3.16"
+drf-spectacular = ">=0.27.1,<0.28"
+psycopg2 = ">=2.9.9,<3.0"
+dj-database-url = ">=2.1.0,<2.2"
+django-cors-headers = "4.3.1"
+faker = "6.6.1"
+pillow = ">=10.2.0,<10.3.0"
+gunicorn = ">=21.2.0,<21.3.0"
+python-dotenv = "1.0.0"
+flake8 = ">=3.9.2,<3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
