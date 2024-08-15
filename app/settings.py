@@ -135,6 +135,9 @@ USE_TZ = True
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 
+# if not DEBUG:
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_ROOT = '/vol/web/media'
 STATIC_ROOT = '/vol/web/static'
 
